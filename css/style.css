@@ -98,8 +98,8 @@ footer {
 }
 
 h1#name {
-  float:right;
-  margin-right: 20px;
+  float:left;
+  margin-left: 20px;
 }
 
 #content {
