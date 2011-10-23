@@ -1,8 +1,12 @@
 ---
-layout: post
+layout: item
 title: House Print
 thumb: thumb.png
 categories:
-- prints
+- print
+- baby
+images:
+- house/img1.png
+- house/img2.png
 ---
 

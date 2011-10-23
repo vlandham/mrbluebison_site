@@ -66,7 +66,7 @@ td { vertical-align: top; }
    ========================================================================== */
 body {
   color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
   line-height: 1.5;
   word-spacing: 1px;
@@ -82,8 +82,16 @@ header {
   float: left;
 }
 
+
 #main {
-  padding-top: 70px;
+  width: 840px;
+  padding-top: 78px;
+  margin: auto;
+}
+
+#content {
+  width: 705px;
+  float: right;
 }
 
 nav {
@@ -108,8 +116,19 @@ nav ul li a.selected {
   color: white;
 }
 
-nav ul li a:active {
-  color: red;
+#all.all {
+  background-color: #3d3d3d;
+  color: white;
+}
+
+#baby.baby {
+  background-color: #3d3d3d;
+  color: white;
+}
+
+#print.print {
+  background-color: #3d3d3d;
+  color: white;
 }
 
 #logo {
@@ -119,11 +138,6 @@ nav ul li a:active {
   width: 96px;
   height: 96px;
   background-color: #ddd;
-}
-
-#main {
-  width: 705px;
-  margin: auto;
 }
 
 h2.section-title {
@@ -146,11 +160,21 @@ h2.section-title {
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  padding:0;
+  margin:0;
 }
 
 .thumb-title a {
   text-decoration: none;
   display:block;
+  padding:5px;
+}
+
+#slider {
+}
+
+h1#title {
+  text-align: center;
 }
 
 /* ==|== non-semantic helper classes ======================================== */

@@ -2,11 +2,11 @@
 layout: default
 title: 2tooth studio
 categories: 
-- all
+- print
 ---
 
 <h2 class="section-title">{{ page.categories }}:</h2>
 
-{% for post in site.posts %}
+{% for post in site.categories.print %}
 {% include item.html %}
 {% endfor %}

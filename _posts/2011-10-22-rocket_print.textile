@@ -3,6 +3,8 @@ layout: item
 title: Rocket Print
 thumb: thumb.png
 categories:
-- prints
+- print
 ---
+
+h2. About
 
