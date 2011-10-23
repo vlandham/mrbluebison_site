@@ -91,12 +91,15 @@ footer {
   color: #ddd;
 }
 
-
-
-#main {
+.main {
   width: 840px;
   padding-top: 78px;
   margin: auto;
+}
+
+h1#name {
+  float:right;
+  margin-right: 20px;
 }
 
 #content {
