@@ -1,0 +1,8 @@
+---
+layout: item
+title: Baby Shirt
+thumb: thumb.png
+categories:
+- baby
+---
+

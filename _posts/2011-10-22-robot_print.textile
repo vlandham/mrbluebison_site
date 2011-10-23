@@ -1,0 +1,9 @@
+---
+layout: post
+title: Robot Print
+thumb: thumb.png
+categories:
+- baby
+- prints
+---
+
