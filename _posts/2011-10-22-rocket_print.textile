@@ -1,9 +1,13 @@
 ---
 layout: item
 title: Rocket Print
-thumb: thumb.png
+thumb: rocket.jpg
 categories:
 - print
+images:
+- rocket/rocket1.jpg
+- rocket/rocket2.jpg
+- rocket/rocket3.jpg
 ---
 
 h2. About

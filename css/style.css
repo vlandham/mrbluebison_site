@@ -82,6 +82,16 @@ header {
   float: left;
 }
 
+footer {
+  width: 705;
+  margin-left: 120px;
+  padding-top: 30px;
+  clear:both;
+  text-align: center;
+  color: #ddd;
+}
+
+
 
 #main {
   width: 840px;

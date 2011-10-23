@@ -4,7 +4,6 @@ title: House Print
 thumb: thumb.png
 categories:
 - print
-- baby
 images:
 - house/img1.png
 - house/img2.png

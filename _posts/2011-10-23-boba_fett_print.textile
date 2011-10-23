@@ -1,0 +1,13 @@
+---
+layout: item
+title: Boba Fett Print
+categories:
+- print
+thumb: fett.jpg
+images:
+- fett/fett1.jpg
+- fett/fett2.jpg
+- fett/fett3.jpg
+- fett/fett4.jpg
+---
+
