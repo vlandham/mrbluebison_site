@@ -10,7 +10,7 @@ images:
 - rocket/rocket3.jpg
 ---
 
-h3. Print Dimensions
+h3. Specs
 
 h3. About
 
