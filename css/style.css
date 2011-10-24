@@ -67,7 +67,7 @@ td { vertical-align: top; }
 body {
   color: black;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 1.5;
   word-spacing: 1px;
 }
@@ -75,6 +75,8 @@ body {
 a, a:visited, a:active {
   color: #3d3d3d;
 }
+
+a:hover { color: #588EEA; }
 
 header {
   margin-left: 20px;
@@ -100,6 +102,10 @@ footer {
 h1#name {
   float:left;
   margin-left: 20px;
+}
+
+h1#name a {
+  text-decoration:none;
 }
 
 #content {
@@ -186,7 +192,7 @@ h2.section-title {
 #slider {
 }
 
-h1#title {
+h2#title {
   text-align: center;
 }
 
