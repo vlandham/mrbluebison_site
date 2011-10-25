@@ -1,9 +1,0 @@
----
-layout: item
-title: Robot Shirt
-thumb: thumb.png
-categories:
-- baby
-- print
----
-
