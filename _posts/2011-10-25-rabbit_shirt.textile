@@ -1,0 +1,15 @@
+---
+layout: item
+title: Rabbit Shirt
+categories:
+- print
+- shirt
+thumb: rabbit.jpg
+images:
+- rabbit/rabbit1.jpg
+- rabbit/rabbit2.jpg
+- rabbit/rabbit3.jpg
+- rabbit/rabbit4.jpg
+---
+
+h3. About
