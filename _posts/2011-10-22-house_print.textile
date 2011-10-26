@@ -1,12 +1,14 @@
 ---
 layout: item
 title: House Print
-thumb: thumb.png
+thumb: house.jpg
 categories:
 - print
 images:
-- house/img1.png
-- house/img2.png
+- house/house1.jpg
+- house/house2.jpg
+- house/house3.jpg
+- house/house4.jpg
 ---
 
 h3. Specs
