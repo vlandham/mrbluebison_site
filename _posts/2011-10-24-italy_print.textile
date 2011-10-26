@@ -3,9 +3,12 @@ layout: item
 title: Italy Print
 categories:
 - print
-thumb: thumb.png
+thumb: italy.jpg
 images:
-- img1.png
+- italy/italy1.jpg
+- italy/italy2.jpg
+- italy/italy3.jpg
+- italy/italy4.jpg
 ---
 
 h3. Specs
