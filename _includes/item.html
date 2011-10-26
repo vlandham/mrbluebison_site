@@ -1,5 +1,5 @@
 <div class="thumb">
-  <a href="{{ post.url }}"><img  id="{{ post.title | downcase | replace:' ','_' | append: "_thumb" }}" src="img/thumb/{{ post.thumb }}"/></a>
+  <a class="image_link_thumb" href="{{ post.url }}"><img  id="{{ post.title | downcase | replace:' ','_' | append: "_thumb" }}" src="img/thumb/{{ post.thumb }}"/></a>
   <p class="thumb-title">
   <a id="{{ post.title | downcase | replace:' ','_' | append: "_title" }}" href="{{ post.url }}">{{ post.title }}</a>
   </p>

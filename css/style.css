@@ -172,8 +172,16 @@ h2.section-title {
   width: 200px;
 }
 
+a.all_thumb {
+  display: block;
+}
+
 .thumb img {
   background-color: #ddd;
+}
+
+.thumb a {
+  display: block;
 }
 
 .thumb-title {
@@ -189,6 +197,8 @@ h2.section-title {
   display:block;
   padding:5px;
 }
+
+.thumb-title.hover a { color: #588EEA; }
 
 #slider {
   margin: auto;
