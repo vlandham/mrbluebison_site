@@ -102,11 +102,14 @@ footer {
 h1#name {
   float:left;
   margin-left: 20px;
+  margin-top: 6px;
 }
 
 h1#name a {
   text-decoration:none;
   color: #1a1a1a;
+  margin-top:0;
+  padding-top:0;
 }
 
 #content {
