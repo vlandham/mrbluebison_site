@@ -103,6 +103,7 @@ h1#name {
   float:left;
   margin-left: 20px;
   margin-top: 6px;
+  font-family: 'Josefin Slab', serif;
 }
 
 h1#name a {
