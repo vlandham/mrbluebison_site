@@ -1,0 +1,15 @@
+---
+layout: item
+title: Owl Diaper
+categories:
+- baby
+thumb: owl.jpg
+images:
+- owl/owl1.jpg
+- owl/owl2.jpg
+- owl/owl3.jpg
+---
+
+h3. About
+
+
