@@ -1,10 +1,12 @@
 ---
 layout: default
 ---
-<div id="slider">
-  {% for image in page.images %}
-  <img src="img/{{ image }}" title="" alt=""/>
-  {% endfor %}
+<div class="rslides_container">
+  <ul class="rslides" id="slider">
+    {% for image in page.images %}
+    <li><img src="img/{{ image }}" title="" alt=""/></li>
+    {% endfor %}
+  </ul>
 </div>
 <h2 id="title">{{ page.title }}</h2>
 <div id="details">

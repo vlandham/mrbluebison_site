@@ -4,6 +4,13 @@ $(window).load(function() {
     function() { $(this).removeClass('hover').next().removeClass('hover'); }
     );
 
-  $('#slider').coinslider({ width:670, height:400, delay:4000, effect:'straight', links:false, sDelay:10});
+  $("#slider").responsiveSlides({
+    auto: true,
+    pager: true,
+    nav: true,
+    speed: 500,
+    maxwidth: 800,
+    namespace: "centered-btns"
+  });
 });
 
