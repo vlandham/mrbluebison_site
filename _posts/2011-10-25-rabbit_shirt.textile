@@ -4,6 +4,7 @@ title: Rabbit Shirt
 categories:
 - print
 - shirt
+- adult
 thumb: rabbit.jpg
 images:
 - rabbit/rabbit1.jpg

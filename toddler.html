@@ -1,0 +1,12 @@
+---
+layout: default
+title: toddler
+categories: 
+- toddler
+---
+
+<h2 class="section-title">{{ page.categories }}:</h2>
+
+{% for post in site.categories.toddler %}
+{% include item.html %}
+{% endfor %}

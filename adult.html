@@ -1,0 +1,12 @@
+---
+layout: default
+title: adult
+categories: 
+- adult
+---
+
+<h2 class="section-title">{{ page.categories }}:</h2>
+
+{% for post in site.categories.adult %}
+{% include item.html %}
+{% endfor %}

@@ -1,0 +1,12 @@
+---
+layout: default
+title: sewing
+categories: 
+- sewing
+---
+
+<h2 class="section-title">{{ page.categories }}:</h2>
+
+{% for post in site.categories.sewing %}
+{% include item.html %}
+{% endfor %}
