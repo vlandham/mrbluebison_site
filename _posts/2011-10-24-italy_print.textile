@@ -11,8 +11,6 @@ images:
 - italy/italy4.jpg
 ---
 
-h3. Specs
-
 h3. About
 
 Long, long ago we were an adventurous troop. Wandering the world in search of novel experiences and excitements. Perhaps some day we might return to our free-roaming ways, but until that time, we will have this print to remind us of where we've been.
