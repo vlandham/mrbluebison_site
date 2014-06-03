@@ -164,6 +164,11 @@ a.all_thumb {
 
 .thumb-title.hover a { color: #588EEA; }
 
+.blue {
+  color: #327CCB;
+  /* color: #3D52AE; */
+}
+
 h2#logo a {
   text-decoration:none;
   color: #1a1a1a;
