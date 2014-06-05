@@ -136,6 +136,12 @@
   width: 200px;
 }
 
+img.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 a.all_thumb {
   display: block;
 }

@@ -1,0 +1,20 @@
+---
+layout: item
+title: Baby Go Bag
+categories:
+- baby
+- adult
+- sewing
+thumb: baby_go_bag.jpg
+images:
+- baby_go_bag/baby_go_bag1.jpg
+- baby_go_bag/baby_go_bag2.jpg
+- baby_go_bag/baby_go_bag3.jpg
+- baby_go_bag/baby_go_bag4.jpg
+- baby_go_bag/baby_go_bag5.jpg
+---
+
+h3. About
+
+Commissioned to commemorate the welcoming of our second born into the world.
+

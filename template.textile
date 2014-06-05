@@ -1,12 +1,13 @@
 ---
 layout: item
-title: 
+title: !TITLE
 categories:
 - baby
 - print
 - shirt
-thumb: thumb.png
+thumb: !FILE.jpg
 images:
-- img1.png
+- !FILE/!FILE1.jpg
+- !FILE/!FILE2.jpg
 ---
 
