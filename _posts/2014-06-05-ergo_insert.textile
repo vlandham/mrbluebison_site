@@ -1,0 +1,16 @@
+---
+layout: item
+title: Ergo Insert
+categories:
+- baby
+- sewing
+thumb: ergo_insert.jpg
+images:
+- ergo_insert1.jpg
+- ergo_insert2.jpg
+---
+
+h3. About
+
+Now everybody likes the Ergo right? But, wouldn't it be great if you could jam a newborn in one? Well, now you can!
+
