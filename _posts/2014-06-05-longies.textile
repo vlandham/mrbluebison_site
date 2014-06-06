@@ -1,0 +1,13 @@
+---
+layout: item
+title: Longies
+categories:
+- baby
+- knitting
+thumb: longies.jpg
+images:
+- longies/longies1.jpg
+- longies/longies2.jpg
+- longies/longies3.jpg
+---
+
