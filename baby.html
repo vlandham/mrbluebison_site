@@ -1,11 +1,11 @@
 ---
 layout: default
 title: baby
-categories: 
+categories:
 - baby
 ---
 
-<h2 class="section-title">{{ page.categories }}:</h2>
+<h2 class="section-title"><span>{{ page.categories }}</span></h2>
 
 {% for post in site.categories.baby %}
 {% include item.html %}

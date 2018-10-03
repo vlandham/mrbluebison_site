@@ -1,11 +1,11 @@
 ---
 layout: default
 title: adult
-categories: 
+categories:
 - adult
 ---
 
-<h2 class="section-title">{{ page.categories }}:</h2>
+<h2 class="section-title"><span>{{ page.categories }}</span></h2>
 
 {% for post in site.categories.adult %}
 {% include item.html %}

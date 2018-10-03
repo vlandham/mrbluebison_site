@@ -10,4 +10,3 @@ images:
 - !FILE/!FILE1.jpg
 - !FILE/!FILE2.jpg
 ---
-

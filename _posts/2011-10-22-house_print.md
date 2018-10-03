@@ -3,15 +3,15 @@ layout: item
 title: House Print
 thumb: house.jpg
 categories:
-- print
+  - print
 images:
-- house/house1.jpg
-- house/house2.jpg
-- house/house3.jpg
-- house/house4.jpg
+  - house/house1.jpg
+  - house/house2.jpg
+  - house/house3.jpg
+  - house/house4.jpg
 ---
 
-h3. About
+
 
 Cresting the hill you come upon The House. It towers above the roadway below. Though some what ominous, it is not a place to be feared, for some call this house a home. Specifically, WE are those that call it home. This is a block print of our abode on a cold winter's day. Built in 1920, it is a testament to the timeless beauty and impeccable quality now lost in modern home construction.
 
