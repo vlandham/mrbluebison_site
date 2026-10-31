@@ -13,11 +13,10 @@ Bethany's medium of choice typically involves a textile of some sort. Her sewing
 
 Jim is a <a href="http://vallandingham.me">data visualizer</a> by trade. For him, block and screen printing are a nice escape from the constant barrage of 1's and 0's we all face in this modern world. His work shows that his fingers' aptitude for pressing down on keys of a keyboard does not necessarily translate to artistic prowess.
 
-<img class="center" src="img/us.jpg" title="Jim Bethany and Child"/>
+<img class="center" src="img/us.jpg" alt="Jim and Bethany with their child"/>
 <p class="center"><i>Jim &amp; Bethany &amp; Child, For Reals This Time</i></p>
 
 We reside in a wonderful home in a wonderful neighborhood of Seattle. Come visit any time.
 
-<img class="center" src="img/travel.png" title="Travel"/>
+<img class="center" src="img/travel.png" alt="Map of the family's travels and migrations"/>
 <p class="center"><i>Travel and Migrations of the Vallandingham Family</i></p>
-
