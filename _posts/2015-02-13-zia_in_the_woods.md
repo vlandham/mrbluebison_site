@@ -5,6 +5,8 @@ categories:
   - toddler
   - print
 thumb: woods.jpg
+thumb_width: 142
+thumb_height: 135
 images:
   - woods/woods1.jpg
   - woods/woods2.jpg

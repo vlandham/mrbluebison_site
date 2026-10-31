@@ -18,5 +18,17 @@ Actions publishing uses that setting, not the repository's `CNAME` file.
 No Namecheap DNS changes are needed for this migration. Enable **Enforce
 HTTPS** in Pages settings once GitHub has provisioned the certificate.
 
-The workflow uses the GitHub Pages Jekyll environment, matching the hosted
-build instead of installing the legacy dependencies in `Gemfile.lock`.
+The workflow uses the GitHub Pages Jekyll environment for hosted builds.
+
+## Local preview
+
+Install Ruby and Bundler, then run:
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+Open the local URL printed by Jekyll (usually `http://127.0.0.1:4000`). The
+`github-pages` dependency in `Gemfile` provides Jekyll and the supported
+plugins. Pull requests also run the hosted Pages build.

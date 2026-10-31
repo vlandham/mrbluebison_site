@@ -4,6 +4,20 @@ div.container {
   padding-top: 60px;
 }
 
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 1;
+  padding: 10px 14px;
+  background: #fff;
+  color: #222;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+}
+
 /* Doc nav */
 nav {
   position: fixed;
@@ -31,7 +45,8 @@ nav ul li a:active {
   font-weight: bold;
 }
 nav ul li a:hover,
-nav ul li a:focus {
+nav ul li a:focus,
+nav ul li a:focus-visible {
   color: #222;
 }
 header h1 {
@@ -123,12 +138,16 @@ ul ul ul li {
   margin-bottom: -18px;
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 24px 20px;
+}
+
 .thumb {
-  float: left;
-  margin: 0 35px 10px 0;
+  min-width: 0;
+  margin: 0;
   text-align: center;
-  position: relative;
-  width: 200px;
 }
 
 img.center {
@@ -143,6 +162,9 @@ a.all_thumb {
 
 .thumb img {
   background-color: #ddd;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .thumb a {
@@ -163,8 +185,11 @@ a.all_thumb {
   padding: 5px;
 }
 
-.thumb-title.hover a {
-  color: #588eea;
+.thumb a:focus-visible,
+.thumb-title a:focus-visible,
+footer a:focus-visible {
+  outline: 3px solid #327ccb;
+  outline-offset: 3px;
 }
 
 .blue {
@@ -198,44 +223,25 @@ nav ul li a {
   margin-bottom: 10px;
 }
 
-nav ul li a.selected {
+nav ul li a[aria-current="page"] {
   background-color: #3d3d3d;
   color: white;
 }
 
-#all.all {
-  background-color: #3d3d3d;
-  color: white;
+.project-gallery {
+  display: grid;
+  gap: 24px;
+  margin: 0 0 32px;
 }
 
-#baby.baby {
-  background-color: #3d3d3d;
-  color: white;
+.project-gallery li {
+  margin: 0;
 }
 
-#print.print {
-  background-color: #3d3d3d;
-  color: white;
-}
-
-#toddler.toddler {
-  background-color: #3d3d3d;
-  color: white;
-}
-
-#adult.adult {
-  background-color: #3d3d3d;
-  color: white;
-}
-
-#sewing.sewing {
-  background-color: #3d3d3d;
-  color: white;
-}
-
-#knitting.knitting {
-  background-color: #3d3d3d;
-  color: white;
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .section-title span {
@@ -260,14 +266,32 @@ footer {
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
+  div.container {
+    padding-top: 24px;
+  }
   header h1 {
     font-size: 34px;
     line-height: 37px;
   }
   nav {
     position: relative;
+    width: auto;
+    margin: 16px 0 24px;
   }
-  nav ul,
+  nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+    float: none;
+    margin: 0;
+  }
+  nav ul li {
+    margin: 0;
+  }
+  nav ul li a {
+    margin: 0;
+    padding: 8px 4px;
+  }
   .carbonad {
     display: none;
   }
@@ -276,13 +300,6 @@ footer {
   }
   #examples .four.columns {
     padding-top: 30px;
-  }
-}
-
-/* Mobile Landscape */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  nav ul {
-    display: none;
   }
 }
 

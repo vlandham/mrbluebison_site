@@ -1,6 +1,6 @@
 <div class="thumb">
-  <a class="image_link_thumb" href="{{ post.url }}"><img  id="{{ post.title | downcase | replace:' ','_' | append: "_thumb" }}" src="img/thumb/{{ post.thumb }}"/></a>
+  <a href="{{ post.url }}"><img id="{{ post.title | downcase | replace:' ','_' | append: "_thumb" }}" src="img/thumb/{{ post.thumb }}" alt="{{ post.title }}" width="{{ post.thumb_width | default: 200 }}" height="{{ post.thumb_height | default: 135 }}" loading="lazy" decoding="async"></a>
   <p class="thumb-title">
-  <a id="{{ post.title | downcase | replace:' ','_' | append: "_title" }}" href="{{ post.url }}">{{ post.title }}</a>
+    <a id="{{ post.title | downcase | replace:' ','_' | append: "_title" }}" href="{{ post.url }}">{{ post.title }}</a>
   </p>
 </div>

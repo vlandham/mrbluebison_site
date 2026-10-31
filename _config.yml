@@ -7,4 +7,4 @@ encoding: utf-8
 
 description: ""
 
-exclude: ["Rakefile", "README.textile", "new.rb", "template.html"]
+exclude: ["Rakefile", "README.textile", "new.rb", "template.html", "template.md"]

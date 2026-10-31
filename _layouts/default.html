@@ -1,82 +1,49 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
   <title>Mr. Blue Bison: {{ page.title }}</title>
-  <meta name="description" content="A source of fun and inspiration fueled by the Vallandinghams.">
+  <meta name="description" content="A source of fun and inspiration fueled by the Vallandingham family.">
   <meta name="author" content="Jim Vallandingham">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-  <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/responsiveslides.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Slab">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/main.css">
-
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
 
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
   <div class="container">
     <div class="two columns sidebar">
       <div id="top">
-        <a href="/"><img src="img/logo.png"/></a>
+        <a href="/"><img src="img/logo.png" alt="Mr. Blue Bison"></a>
         <h2 id="logo"><a href="/">Mr. <span class="blue">Blue</span> Bison</a></h2>
       </div>
-      <nav>
-      <ul>
-        <li><a id="all" class="{{ page.categories | join: " " }}" href="/">all</a></li>
-        <li><a id="baby" class="{{ page.categories | join: " " }}" href="baby.html">baby</a></li>
-        <li><a id="toddler" class="{{ page.categories | join: " " }}" href="toddler.html">toddler</a></li>
-        <li><a id="adult" class="{{ page.categories | join: " " }}" href="adult.html">adult</a></li>
-        <li><a id="print" class="{{ page.categories | join: " " }}" href="print.html">print</a></li>
-        <li><a id="sewing" class="{{ page.categories | join: " " }}" href="sewing.html">sewing</a></li>
-        <li><a id="knitting" class="{{ page.categories | join: " " }}" href="knitting.html">knitting</a></li>
-      </ul>
+      <nav aria-label="Project categories">
+        <ul>
+          <li><a id="all" href="/" {% if page.categories contains "all" %}aria-current="page"{% endif %}>all</a></li>
+          <li><a id="baby" href="baby.html" {% if page.layout != "item" and page.categories contains "baby" %}aria-current="page"{% endif %}>baby</a></li>
+          <li><a id="toddler" href="toddler.html" {% if page.layout != "item" and page.categories contains "toddler" %}aria-current="page"{% endif %}>toddler</a></li>
+          <li><a id="adult" href="adult.html" {% if page.layout != "item" and page.categories contains "adult" %}aria-current="page"{% endif %}>adult</a></li>
+          <li><a id="print" href="print.html" {% if page.layout != "item" and page.categories contains "print" %}aria-current="page"{% endif %}>print</a></li>
+          <li><a id="sewing" href="sewing.html" {% if page.layout != "item" and page.categories contains "sewing" %}aria-current="page"{% endif %}>sewing</a></li>
+          <li><a id="knitting" href="knitting.html" {% if page.layout != "item" and page.categories contains "knitting" %}aria-current="page"{% endif %}>knitting</a></li>
+        </ul>
       </nav>
     </div>
-    <div class="main thirteen offset-by-one columns" role="main">
-      <div id="content">
+    <div class="main thirteen offset-by-one columns">
+      <main id="content">
         {{ content }}
-      </div>
+      </main>
 
       <footer>
-      <p><a href="/">home</a> | <a href="about.html">about</a> | <a href="contact.html">contact</a> | <a href="http://feeds.feedburner.com/MrBlueBison">subscribe</a>
-      <p>&copy; 2011 - 2018 Jim &amp; Bethany Vallandingham</p>
+        <p><a href="/">home</a> | <a href="about.html">about</a> | <a href="contact.html">contact</a> | <a href="https://feeds.feedburner.com/MrBlueBison">subscribe</a></p>
+        <p>&copy; 2011 - 2018 Jim &amp; Bethany Vallandingham</p>
       </footer>
-    </div>
+    </main>
   </div>
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
-
-  <script src="js/libs/responsiveslides.min.js"></script>
-  <script defer src="js/helper.js"></script>
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
-
-
-  <script>
-    window._gaq = [['_setAccount','UA-26518241-1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-  </script>
-
-
-  <!--[if lt IE 7 ]>
-  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-
 </body>
 </html>
