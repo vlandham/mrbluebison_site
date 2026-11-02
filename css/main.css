@@ -175,16 +175,17 @@ a.all_thumb {
 
 .thumb-title {
   width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
   padding: 0;
   margin: 0;
+  line-height: 1.25;
+  text-wrap: balance; /* even out two-line titles */
+  overflow-wrap: break-word;
 }
 
 .thumb-title a {
   text-decoration: none;
   display: block;
-  padding: 5px;
+  padding: 5px 2px;
 }
 
 .thumb a:focus-visible,
