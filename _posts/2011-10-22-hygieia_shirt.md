@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Hygieia Shirt
+maker: bethany
 categories:
   - baby
   - shirt

@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Boba Fett Print
+maker: jim
 categories:
   - print
 thumb: fett.jpg

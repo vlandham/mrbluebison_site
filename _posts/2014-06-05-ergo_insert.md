@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Ergo Insert
+maker: bethany
 categories:
   - baby
   - sewing

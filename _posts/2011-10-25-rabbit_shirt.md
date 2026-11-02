@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Rabbit Shirt
+maker: bethany
 categories:
   - print
   - shirt

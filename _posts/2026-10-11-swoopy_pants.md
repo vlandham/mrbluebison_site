@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Swoopy Pants
+maker: bethany
 categories:
   - adult
   - sewing

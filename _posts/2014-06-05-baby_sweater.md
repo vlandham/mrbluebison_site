@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Baby Sweater
+maker: bethany
 categories:
   - baby
   - knitting

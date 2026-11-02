@@ -33,6 +33,18 @@
           {%- endif %}
           {%- endfor %}
         </ul>
+        <ul class="nav-makers">
+          {%- assign page_makers = page.maker | join: "," | split: "," %}
+          {%- for m in site.makers %}
+          {%- if page.maker_page == m.key %}
+          <li><a id="by_{{ m.key }}" href="{{ m.page }}" aria-current="page">{{ m.label | downcase }}</a></li>
+          {%- elsif page.layout == "item" and page_makers contains m.key %}
+          <li><a id="by_{{ m.key }}" href="{{ m.page }}" class="in-post">{{ m.label | downcase }}</a></li>
+          {%- else %}
+          <li><a id="by_{{ m.key }}" href="{{ m.page }}">{{ m.label | downcase }}</a></li>
+          {%- endif %}
+          {%- endfor %}
+        </ul>
       </nav>
     </div>
     <div class="main thirteen offset-by-one columns">

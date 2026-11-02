@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Owl Diaper
+maker: bethany
 categories:
   - baby
 thumb: owl.jpg

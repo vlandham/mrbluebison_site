@@ -22,7 +22,16 @@ layout: default
 
 <h2 id="title">{{ page.title }}</h2>
 <p class="post-meta">
-  <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  <span class="post-byline">
+    <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+    {%- assign page_makers = page.maker | join: "," | split: "," %}
+    {%- if page_makers.size > 0 %} · by
+    {%- for key in page_makers %}
+    {%- assign m = site.makers | where: "key", key | first %}
+    {%- if m %} <a href="{{ m.page }}">{{ m.byline }}</a>{% else %} {{ key }}{% endif %}{% unless forloop.last %} &amp;{% endunless %}
+    {%- endfor %}
+    {%- endif %}
+  </span>
   {%- if page.categories.size > 0 %}
   <span class="post-tags">
     {%- for cat in page.categories %}

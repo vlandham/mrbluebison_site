@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Moped Print
+maker: jim
 categories:
   - print
 thumb: moped.jpg

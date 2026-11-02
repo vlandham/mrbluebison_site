@@ -12,3 +12,14 @@ exclude: ["Rakefile", "README.textile", "new.rb", "template.html", "template.md"
 # Categories with their own page, in nav order. Other categories (e.g. "shirt")
 # still show as tags on posts but aren't linked.
 nav_categories: [baby, toddler, adult, print, sewing, knitting]
+
+# Who made a post: set `maker:` in a post to one key (or a list for joint work).
+makers:
+  - key: jim
+    label: By Jimmy
+    byline: Jimmy
+    page: by_jimmy.html
+  - key: bethany
+    label: By B
+    byline: B
+    page: by_b.html

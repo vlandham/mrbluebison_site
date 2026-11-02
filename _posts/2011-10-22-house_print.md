@@ -1,6 +1,7 @@
 ---
 layout: item
 title: House Print
+maker: jim
 thumb: house.jpg
 categories:
   - print

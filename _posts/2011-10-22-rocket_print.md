@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Rocket Print
+maker: jim
 thumb: rocket.jpg
 categories:
   - print

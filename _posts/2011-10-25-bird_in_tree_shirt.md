@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Bird In Tree Shirt
+maker: bethany
 categories:
   - baby
   - shirt

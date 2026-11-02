@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Koi And Lantern Shirt
+maker: bethany
 categories:
   - baby
   - shirt

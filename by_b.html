@@ -1,0 +1,16 @@
+---
+layout: default
+title: By B
+maker_page: bethany
+---
+
+<h2 class="section-title"><span>{{ page.title | downcase }}</span></h2>
+
+<div class="gallery-grid">
+{% for post in site.posts %}
+{%- assign post_makers = post.maker | join: "," | split: "," %}
+{%- if post_makers contains page.maker_page %}
+{% include item.html %}
+{%- endif %}
+{% endfor %}
+</div>

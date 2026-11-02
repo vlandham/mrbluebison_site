@@ -70,6 +70,11 @@ Read `.claude/skills/new-post/voice.md`, then re-read 2–3 of the example posts
   `print`, `sewing`, `knitting`), plus `shirt` as an unlinked tag. Pick 1–3; they show as tags
   on the post and highlight in the nav. A new category needs adding to `nav_categories` plus a
   page like `baby.html`; only do that if the user asks.
+- `maker`: who made it, from `makers` in `_config.yml`: `jim` (shown as "Jimmy") or `bethany`
+  (shown as "B"); a list `[jim, bethany]` for joint work. Infer from the context (first-person
+  notes from Bethany → `bethany`); prints are usually Jim's but not always (the Rabbit Shirt
+  screenprint is Bethany's). If unclear, ask. Shown as a byline and drives the "by jimmy" /
+  "by b" pages.
 - `date`: shown on the post page and used to sort the front page. Default to **when the photos
   were taken**: the latest `taken` among the chosen photos in `manifest.json` whose
   `taken_from` is `"photo"` (camera date). `build.py` also prints this as `post_date`. If none of
@@ -79,7 +84,7 @@ Read `.claude/skills/new-post/voice.md`, then re-read 2–3 of the example posts
 - Body in Jim's voice per the guide.
 
 **Checkpoint:** show the user the selected photo numbers + gravities, thumbnail, title,
-categories, date, and the full text. Wait for approval or edits. This is the one stop.
+maker, categories, date, and the full text. Wait for approval or edits. This is the one stop.
 
 ## 5. Build
 
@@ -95,6 +100,7 @@ Images are written in exactly the `--images` order. It writes `img/<slug>/<slug>
 ---
 layout: item
 title: <Title>
+maker: <jim|bethany>
 categories:
   - <cat>
 thumb: <slug>.jpg

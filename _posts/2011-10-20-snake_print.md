@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Snake Print
+maker: jim
 categories:
   - print
 thumb: snake.jpg

@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Baby Go Bag
+maker: bethany
 categories:
   - baby
   - adult

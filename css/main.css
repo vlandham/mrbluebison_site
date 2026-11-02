@@ -230,7 +230,18 @@ nav ul li a[aria-current="page"] {
   color: white;
 }
 
-/* On a post page: the categories this post is in */
+/* "by jimmy" / "by b": a separate group below the categories */
+nav ul {
+  width: 100%;
+}
+
+nav ul.nav-makers {
+  margin-top: 4px;
+  padding-top: 14px;
+  border-top: 2px solid #ddd;
+}
+
+/* On a post page: the categories (and maker) this post belongs to */
 nav ul li a.in-post {
   background-color: #327ccb;
   color: white;
@@ -340,6 +351,10 @@ nav ul li a.in-post {
   gap: 8px 16px;
   margin: -10px 0 20px;
   color: #777;
+}
+
+.post-byline a {
+  color: inherit;
 }
 
 .post-tags {

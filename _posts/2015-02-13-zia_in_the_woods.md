@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Zia in the Woods
+maker: jim
 categories:
   - toddler
   - print

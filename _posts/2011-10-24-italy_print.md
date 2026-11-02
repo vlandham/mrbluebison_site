@@ -1,6 +1,7 @@
 ---
 layout: item
 title: Italy Print
+maker: jim
 categories:
   - print
 thumb: italy.jpg
