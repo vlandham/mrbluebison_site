@@ -25,12 +25,13 @@
       <nav aria-label="Project categories">
         <ul>
           <li><a id="all" href="/" {% if page.categories contains "all" %}aria-current="page"{% endif %}>all</a></li>
-          <li><a id="baby" href="baby.html" {% if page.layout != "item" and page.categories contains "baby" %}aria-current="page"{% endif %}>baby</a></li>
-          <li><a id="toddler" href="toddler.html" {% if page.layout != "item" and page.categories contains "toddler" %}aria-current="page"{% endif %}>toddler</a></li>
-          <li><a id="adult" href="adult.html" {% if page.layout != "item" and page.categories contains "adult" %}aria-current="page"{% endif %}>adult</a></li>
-          <li><a id="print" href="print.html" {% if page.layout != "item" and page.categories contains "print" %}aria-current="page"{% endif %}>print</a></li>
-          <li><a id="sewing" href="sewing.html" {% if page.layout != "item" and page.categories contains "sewing" %}aria-current="page"{% endif %}>sewing</a></li>
-          <li><a id="knitting" href="knitting.html" {% if page.layout != "item" and page.categories contains "knitting" %}aria-current="page"{% endif %}>knitting</a></li>
+          {%- for cat in site.nav_categories %}
+          {%- if page.layout == "item" %}
+          <li><a id="{{ cat }}" href="{{ cat }}.html" {% if page.categories contains cat %}class="in-post"{% endif %}>{{ cat }}</a></li>
+          {%- else %}
+          <li><a id="{{ cat }}" href="{{ cat }}.html" {% if page.categories contains cat %}aria-current="page"{% endif %}>{{ cat }}</a></li>
+          {%- endif %}
+          {%- endfor %}
         </ul>
       </nav>
     </div>
@@ -43,7 +44,7 @@
         <p><a href="/">home</a> | <a href="about.html">about</a> | <a href="contact.html">contact</a> | <a href="https://feeds.feedburner.com/MrBlueBison">subscribe</a></p>
         <p>&copy; 2011 - 2018 Jim &amp; Bethany Vallandingham</p>
       </footer>
-    </main>
+    </div>
   </div>
 </body>
 </html>

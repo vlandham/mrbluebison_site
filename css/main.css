@@ -165,6 +165,8 @@ a.all_thumb {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 200 / 135;
+  object-fit: cover;
 }
 
 .thumb a {
@@ -228,20 +230,142 @@ nav ul li a[aria-current="page"] {
   color: white;
 }
 
-.project-gallery {
-  display: grid;
-  gap: 24px;
-  margin: 0 0 32px;
+/* On a post page: the categories this post is in */
+nav ul li a.in-post {
+  background-color: #327ccb;
+  color: white;
 }
 
-.project-gallery li {
+/* Post photo carousel: a scroll-snap strip, enhanced by js/carousel.js */
+.carousel {
+  position: relative;
+  margin: 0 0 24px;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track:focus-visible {
+  outline: 3px solid #327ccb;
+  outline-offset: 3px;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
   margin: 0;
 }
 
-.project-gallery img {
+.carousel-slide img {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 5 / 3;
+  object-fit: cover;
+  background-color: #eee;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: calc(50% - 16px);
+  transform: translateY(-50%);
+  width: 40px;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  background: rgba(61, 61, 61, 0.55);
+  color: white;
+  text-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel .carousel-btn:hover,
+.carousel .carousel-btn:focus-visible {
+  background: rgba(61, 61, 61, 0.9);
+  color: white;
+  border: 0;
+}
+
+.carousel-prev { left: 8px; }
+.carousel-next { right: 8px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 12px;
+}
+
+.carousel-dots[hidden],
+.carousel-btn[hidden] {
+  display: none;
+}
+
+.carousel-dots button {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ddd;
+  cursor: pointer;
+}
+
+.carousel-dots button[aria-current="true"] {
+  background: #3d3d3d;
+}
+
+/* Post date + tags */
+.post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin: -10px 0 20px;
+  color: #777;
+}
+
+.post-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.post-tags .tag {
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: #ddd;
+  color: #3d3d3d;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post-tags a.tag {
+  background: #327ccb;
+  color: white;
+}
+
+.post-tags a.tag:hover,
+.post-tags a.tag:focus-visible {
+  background: #3d3d3d;
 }
 
 .section-title span {

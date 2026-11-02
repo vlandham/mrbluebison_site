@@ -61,10 +61,11 @@ Read `.claude/skills/new-post/voice.md`, then re-read 2–3 of the example posts
 - `title`: short, Title Case, names the thing ("Owl Diaper", "Moped Print").
 - `slug`: lowercase_with_underscores from the title; check `img/<slug>` and `_posts/*-<slug>.md`
   don't already exist.
-- `categories`: only from the nav: `baby`, `toddler`, `adult`, `print`, `sewing`, `knitting`
-  (plus `shirt`, used as a tag). Pick 1–3. A new category would need a new page + nav link in
-  `_layouts/default.html`; only do that if the user asks.
-- `date`: default to today (newest-first front page). If the user wants it back-dated to when
+- `categories`: from `nav_categories` in `_config.yml` (currently `baby`, `toddler`, `adult`,
+  `print`, `sewing`, `knitting`), plus `shirt` as an unlinked tag. Pick 1–3; they show as tags
+  on the post and highlight in the nav. A new category needs adding to `nav_categories` plus a
+  page like `baby.html`; only do that if the user asks.
+- `date`: shown on the post page. Default to today (newest-first front page). If the user wants it back-dated to when
   the project was made, use that date.
 - Body in Jim's voice per the guide.
 

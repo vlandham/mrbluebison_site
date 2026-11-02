@@ -1,14 +1,42 @@
 ---
 layout: default
 ---
-<ul class="project-gallery">
-  {% for image in page.images %}
-  <li>
-    <img src="img/{{ image }}" alt="{{ page.title }} - image {{ forloop.index }}" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
-  </li>
-  {% endfor %}
-</ul>
+<div class="carousel" aria-roledescription="carousel" aria-label="{{ page.title }} photos">
+  <ul class="carousel-track" tabindex="0">
+    {%- for image in page.images %}
+    <li class="carousel-slide" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}">
+      <img src="img/{{ image }}" alt="{{ page.title }} - image {{ forloop.index }}" width="800" height="480" {% if forloop.first %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- if page.images.size > 1 %}
+  <button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo" hidden><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button type="button" class="carousel-btn carousel-next" aria-label="Next photo" hidden><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <div class="carousel-dots" hidden>
+    {%- for image in page.images %}
+    <button type="button" aria-label="Show photo {{ forloop.index }}"{% if forloop.first %} aria-current="true"{% endif %}></button>
+    {%- endfor %}
+  </div>
+  {%- endif %}
+</div>
+
 <h2 id="title">{{ page.title }}</h2>
+<p class="post-meta">
+  <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+  {%- if page.categories.size > 0 %}
+  <span class="post-tags">
+    {%- for cat in page.categories %}
+    {%- if site.nav_categories contains cat %}
+    <a class="tag" href="{{ cat }}.html">{{ cat }}</a>
+    {%- else %}
+    <span class="tag">{{ cat }}</span>
+    {%- endif %}
+    {%- endfor %}
+  </span>
+  {%- endif %}
+</p>
 <div id="details">
   {{ content }}
 </div>
+
+<script src="js/carousel.js" defer></script>

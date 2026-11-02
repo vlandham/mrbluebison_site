@@ -8,3 +8,7 @@ encoding: utf-8
 description: ""
 
 exclude: ["Rakefile", "README.textile", "new.rb", "template.html", "template.md"]
+
+# Categories with their own page, in nav order. Other categories (e.g. "shirt")
+# still show as tags on posts but aren't linked.
+nav_categories: [baby, toddler, adult, print, sewing, knitting]
