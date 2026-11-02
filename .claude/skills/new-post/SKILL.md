@@ -42,18 +42,23 @@ previews, `manifest.json`, and numbered contact sheets `sheet_K.jpg`. It prints 
 Read the contact sheet(s) with the Read tool. Open individual `preview/NN.jpg` only where you
 need a closer look (crop decisions, details for the text). Don't read originals.
 
-## 3. Choose photos
+## 3. Choose photos and order
 
-- If the user already specified photos (by number, "the first five", "only the sweater ones",
-  or by giving just those files), follow that.
-- Otherwise propose: 3–6 photos, best first (the first image is the slideshow's lead), no
-  near-duplicates, no blurry shots, plus a thumbnail pick. Prefer photos of the *made thing*;
-  avoid photos where it's not visible.
-- Every image is cropped to **800×480 (5:3 landscape)**, thumbnails to **200×135**. For portrait
-  photos, choose a gravity (`top`, `center`, `bottom`, `left`, `right`) that keeps the subject
-  (e.g., `top` keeps a face, `bottom` keeps shoes). A number `0..1` sets the vertical
-  position precisely (`7:0.3` = upper third), which is often better than `top` for tall photos. Mention when a portrait photo will lose a lot.
-- Tell the user the sheet path so they can open it themselves (`open <path>`) and choose numbers.
+- **Order is exact and matters**: the first image is the lead slide. If the user gives an order
+  (by filename like `IMG_8169`, or by contact-sheet number), use exactly that order and
+  exactly those photos. The contact sheets label each photo with its number and filename.
+- Otherwise propose: 3–6 photos, best first, no near-duplicates, no blurry shots. Prefer
+  photos of the *made thing*. For a curated local folder, propose an order for all of them.
+- Every image becomes **800×480 (5:3 landscape)**; thumbnails **200×135**. For each photo pick:
+  - a crop position: `center` (default), `top`, `bottom`, `left`, `right`, or a number `0..1`
+    for vertical position (`0.3` = upper third), which is often better than `top` for tall photos;
+  - or `fit`: no crop, the whole photo centered on white. Use it for tall photos where cropping
+    would lose the subject (full-length shots, a pattern envelope, a whole garment laid out).
+  Check the previews' proportions (`width`/`height` in `manifest.json`) and say which photos
+  will lose a lot to cropping.
+- Thumbnail: defaults to the first image, cropped (never `fit`). Pick another with `--thumb`
+  when a different photo reads better as a tiny square-ish tile (usually a close, simple shot).
+- Tell the user the sheet path so they can open it themselves (`open <path>`).
 
 ## 4. Draft the post
 
@@ -65,8 +70,12 @@ Read `.claude/skills/new-post/voice.md`, then re-read 2–3 of the example posts
   `print`, `sewing`, `knitting`), plus `shirt` as an unlinked tag. Pick 1–3; they show as tags
   on the post and highlight in the nav. A new category needs adding to `nav_categories` plus a
   page like `baby.html`; only do that if the user asks.
-- `date`: shown on the post page. Default to today (newest-first front page). If the user wants it back-dated to when
-  the project was made, use that date.
+- `date`: shown on the post page and used to sort the front page. Default to **when the photos
+  were taken**: the latest `taken` among the chosen photos in `manifest.json` whose
+  `taken_from` is `"photo"` (camera date). `build.py` also prints this as `post_date`. If none of
+  the chosen photos has a camera date (`taken_from: "file"` means the date is just when the
+  file was saved, e.g. photos sent via Messages), ask the user, defaulting to today. A date
+  the user gives always wins.
 - Body in Jim's voice per the guide.
 
 **Checkpoint:** show the user the selected photo numbers + gravities, thumbnail, title,
@@ -76,10 +85,11 @@ categories, date, and the full text. Wait for approval or edits. This is the one
 
 ```
 .claude/skills/new-post/scripts/build.py --staging <scratchpad>/post_staging --slug <slug> \
-  --images 4 7:top 2 9:bottom --thumb 7
+  --images IMG_8169 IMG_8171:fit IMG_8069 IMG_8067:0.3 --thumb IMG_8169
 ```
-It writes `img/<slug>/<slug>N.jpg` and `img/thumb/<slug>.jpg` (EXIF/GPS stripped) and prints
-the `thumb:`/`images:` front matter. Then write `_posts/<YYYY-MM-DD>-<slug>.md`:
+(Contact-sheet numbers work too: `--images 3 4:fit 2 1:0.3`.)
+Images are written in exactly the `--images` order. It writes `img/<slug>/<slug>N.jpg` and `img/thumb/<slug>.jpg` (EXIF/GPS stripped) and prints
+`post_date` and the `thumb:`/`images:` front matter. Then write `_posts/<post date>-<slug>.md`:
 
 ```
 ---

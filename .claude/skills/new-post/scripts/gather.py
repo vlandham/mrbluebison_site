@@ -60,15 +60,18 @@ def export_from_photos(args, dest: Path) -> None:
     subprocess.run(cmd, check=True, stdout=sys.stderr)
 
 
-def taken_at(path: Path, img: Image.Image) -> str:
+def taken_at(path: Path, img: Image.Image) -> tuple[str, str]:
+    """Return (iso datetime, source): source is "photo" when it came from the camera's
+    EXIF date, "file" when we fell back to the file's modified time (often just the
+    day it was downloaded/copied, so not trustworthy as a post date)."""
     exif = img.getexif()
     raw = exif.get_ifd(0x8769).get(36867) or exif.get(306)  # DateTimeOriginal / DateTime
     if raw:
         try:
-            return datetime.strptime(str(raw).strip(), "%Y:%m:%d %H:%M:%S").isoformat()
+            return datetime.strptime(str(raw).strip(), "%Y:%m:%d %H:%M:%S").isoformat(), "photo"
         except ValueError:
             pass
-    return datetime.fromtimestamp(path.stat().st_mtime).isoformat()
+    return datetime.fromtimestamp(path.stat().st_mtime).isoformat(timespec="seconds"), "file"
 
 
 def natural_key(name: str):
@@ -87,6 +90,7 @@ def font(size: int):
 
 def make_sheets(entries, out: Path) -> list[str]:
     label_font = font(44)
+    name_font = font(18)
     sheets = []
     for s in range(0, len(entries), PER_SHEET):
         chunk = entries[s:s + PER_SHEET]
@@ -102,6 +106,11 @@ def make_sheets(entries, out: Path) -> list[str]:
             box = draw.textbbox((x + 8, y + 8), label, font=label_font)
             draw.rectangle((box[0] - 6, box[1] - 6, box[2] + 6, box[3] + 6), fill="black")
             draw.text((x + 8, y + 8), label, font=label_font, fill="yellow")
+            fname = Path(e["name"]).stem[:22]
+            fb = draw.textbbox((0, 0), fname, font=name_font)
+            fx, fy = x + (CELL - (fb[2] - fb[0])) // 2, y + CELL - 30
+            draw.rectangle((fx - 4, fy - 2, fx + fb[2] - fb[0] + 4, fy + fb[3] + 2), fill="white")
+            draw.text((fx, fy), fname, font=name_font, fill="black")
         name = f"sheet_{s // PER_SHEET + 1}.jpg"
         sheet.save(out / name, quality=80)
         sheets.append(name)
@@ -156,23 +165,25 @@ def main():
     if args.sort == "name":
         records.sort(key=lambda r: natural_key(r[1].name))
     else:
-        records.sort(key=lambda r: (r[0], r[1].name))
+        records.sort(key=lambda r: (r[0][0], r[1].name))
 
     entries = []
-    for n, (when, f, img) in enumerate(records, start=1):
+    for n, ((when, when_src), f, img) in enumerate(records, start=1):
         img = ImageOps.exif_transpose(img).convert("RGB")
         w, h = img.size
         img.thumbnail((1024, 1024))
         prev = f"preview/{n:02d}.jpg"
         img.save(out / prev, quality=85)  # no exif passed -> metadata stripped
-        entries.append({"n": n, "source": str(f.resolve()), "preview": prev,
-                        "taken": when, "width": w, "height": h})
+        entries.append({"n": n, "name": f.name, "source": str(f.resolve()), "preview": prev,
+                        "taken": when, "taken_from": when_src, "width": w, "height": h})
 
     sheets = make_sheets(entries, out)
     (out / "manifest.json").write_text(json.dumps(entries, indent=2))
     print(json.dumps({"count": len(entries), "out": str(out.resolve()),
                       "sheets": [str((out / s).resolve()) for s in sheets],
-                      "dates": [entries[0]["taken"], entries[-1]["taken"]]}, indent=2))
+                      "dates": [entries[0]["taken"], entries[-1]["taken"]],
+                      "photos_without_camera_date": [e["name"] for e in entries
+                                                     if e["taken_from"] == "file"]}, indent=2))
 
 
 if __name__ == "__main__":
