@@ -404,24 +404,49 @@ footer {
   text-align: center;
 }
 
-/* Mobile */
+/* Mobile: use the full screen width instead of skeleton's fixed 300/420px column,
+   and keep the header compact so photos start near the top. */
 @media only screen and (max-width: 767px) {
   div.container {
-    padding-top: 24px;
+    width: auto;
+    padding: 16px 16px 0;
+  }
+  .container .columns.sidebar,
+  .container .columns.main {
+    width: 100%;
+    margin: 0;
   }
   header h1 {
     font-size: 34px;
     line-height: 37px;
   }
+
+  /* Logo and name side by side */
+  #top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  #top img {
+    display: block;
+    width: 64px;
+  }
+  #logo {
+    margin: 0;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  /* Nav as wrapping rows of chips */
   nav {
     position: relative;
     width: auto;
-    margin: 16px 0 24px;
+    margin: 14px 0 20px;
   }
   nav ul {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
     float: none;
     margin: 0;
   }
@@ -430,7 +455,25 @@ footer {
   }
   nav ul li a {
     margin: 0;
-    padding: 8px 4px;
+    padding: 7px 12px;
+    border-radius: 999px;
+  }
+  nav ul.nav-makers {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top-width: 1px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 12px;
+  }
+  .gallery-grid {
+    gap: 18px 12px;
+  }
+  .thumb-title {
+    font-size: 15px;
   }
   .carbonad {
     display: none;
