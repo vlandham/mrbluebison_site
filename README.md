@@ -22,7 +22,10 @@ The workflow uses the GitHub Pages Jekyll environment for hosted builds.
 
 ## Local preview
 
-Install Ruby and Bundler, then run:
+Run `make up`. It uses mise's Ruby 3.3, installs gems if needed, and starts
+Jekyll with live reload, opening the site in your browser.
+
+Or, by hand with Ruby and Bundler:
 
 ```sh
 bundle install
