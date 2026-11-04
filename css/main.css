@@ -433,17 +433,36 @@ footer {
     line-height: 1.2;
   }
 
-  /* Nav as wrapping rows of chips */
+  /* Nav as one sideways-scrolling row of chips, edge to edge,
+     fading out at the right to hint there is more */
   nav {
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     width: auto;
-    margin: 14px 0 20px;
+    margin: 14px -16px 20px;
+    padding: 0 16px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+  }
+  nav::-webkit-scrollbar {
+    display: none;
+  }
+  nav::after {
+    /* room to scroll the last chip clear of the fade */
+    content: "";
+    flex: 0 0 24px;
   }
   nav ul {
     display: flex;
-    flex-wrap: wrap;
+    flex: 0 0 auto;
     gap: 6px;
     float: none;
+    width: auto;
     margin: 0;
   }
   nav ul li {
@@ -453,11 +472,13 @@ footer {
     margin: 0;
     padding: 7px 12px;
     border-radius: 999px;
+    white-space: nowrap;
   }
   nav ul.nav-makers {
-    margin-top: 8px;
-    padding-top: 8px;
-    border-top-width: 1px;
+    margin: 0 0 0 4px;
+    padding: 0 0 0 10px;
+    border-top: 0;
+    border-left: 2px solid #ddd;
   }
 
   .section-title {

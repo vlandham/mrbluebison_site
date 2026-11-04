@@ -46,6 +46,16 @@
           {%- endfor %}
         </ul>
       </nav>
+      <script>
+        // Phones: the nav is one sideways-scrolling row; bring the current chip into view.
+        (function () {
+          var nav = document.currentScript.previousElementSibling;
+          var cur = nav.querySelector('[aria-current="page"], .in-post');
+          if (cur && nav.scrollWidth > nav.clientWidth) {
+            nav.scrollLeft = cur.offsetLeft - (nav.clientWidth - cur.offsetWidth) / 2;
+          }
+        })();
+      </script>
     </div>
     <div class="main thirteen offset-by-one columns">
       <main id="content">
