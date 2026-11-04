@@ -7,6 +7,10 @@ encoding: utf-8
 
 description: ""
 
+# Cloudflare Web Analytics site token (Cloudflare dashboard → Web Analytics).
+# The beacon only loads in production builds when this is set.
+cloudflare_analytics_token: "c6278e2407234ee59d9a96397ae12246"
+
 exclude: ["Rakefile", "README.textile", "new.rb", "template.html", "template.md"]
 
 # Categories with their own page, in nav order. Other categories (e.g. "shirt")

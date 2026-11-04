@@ -28,6 +28,8 @@ jobs:
         with:
           source: ./
           destination: ./_site
+        env:
+          JEKYLL_ENV: production
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:
