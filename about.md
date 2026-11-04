@@ -5,18 +5,10 @@ title: About
 
 # {{ page.title }}
 
-Mr. Blue Bison is the creative journal of the Vallandingham family.
+Mr. Blue Bison is the creative journal of the Vallandingham family: a home for the things we make.
 
 The art on display is sporadic, varied, and of questionable value - but also spontaneous, wondrous, and special.
 
-Bethany's medium of choice typically involves a textile of some sort. Her sewing, stitching, and screen-printing projects leave their viewers breathless.
+Most of it is Bethany's. Her medium of choice usually involves a textile of some sort: sewing, knitting, stitching, and screen printing. Jim contributes the occasional block or screen print, along with the words. His fingers' aptitude for keyboards does not necessarily translate to artistic prowess. You can find his day job over at [vallandingham.me](https://vallandingham.me).
 
-Jim is a <a href="http://vallandingham.me">data visualizer</a> by trade. For him, block and screen printing are a nice escape from the constant barrage of 1's and 0's we all face in this modern world. His work shows that his fingers' aptitude for pressing down on keys of a keyboard does not necessarily translate to artistic prowess.
-
-<img class="center" src="img/us.jpg" alt="Jim and Bethany with their child"/>
-<p class="center"><i>Jim &amp; Bethany &amp; Child, For Reals This Time</i></p>
-
-We reside in a wonderful home in a wonderful neighborhood of Seattle. Come visit any time.
-
-<img class="center" src="img/travel.png" alt="Map of the family's travels and migrations"/>
-<p class="center"><i>Travel and Migrations of the Vallandingham Family</i></p>
+See everything, or just the work [by B](by_b.html) or [by Jimmy](by_jimmy.html).
